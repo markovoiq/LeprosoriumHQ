@@ -9,3 +9,7 @@ set :database, {adapter: "sqlite3", database: "leprosorium.db"}
 get '/' do
 	erb "Leprosorium"
 end
+
+get '/new' do
+	erb "New post"
+end
