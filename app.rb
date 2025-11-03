@@ -24,7 +24,7 @@ post '/new' do
 	@post = Post.new params[:post]
 
 	if @post.save
-		erb "The post has been published"
+		redirect to '/'
 	else
 		@error = @post.errors.full_messages.first
 		erb :new
