@@ -1,0 +1,18 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p><br/><br/><br/>
+
+<h4>Comments</h4>
+<% if @comments.any? %>
+  <% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+  <% end %>
+<% else %>
+  <p>No comments yet.</p>
+<% end %><br /><br />
+
+<form action="/details/<%= @post.id %>/comments" method="POST">
+  <textarea name="content" rows="1"></textarea><br /><br/>
+  <button type="submit" class="btn btn-primary">Add comment</button>
+</form><br /><br/><br/>
+
+<p><a href="/">Back to all posts</a></p>
