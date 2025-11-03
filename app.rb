@@ -12,7 +12,11 @@ class Post < ActiveRecord::Base
 end
 
 get '/' do
-	erb "Leprosorium"
+
+	@posts = Post.order("id DESC")
+
+	erb :posts
+	
 end
 
 get '/new' do
